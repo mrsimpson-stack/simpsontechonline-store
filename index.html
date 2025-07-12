@@ -3,135 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simpson Tech Store</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Simpson Tech - Massive Discounts!</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <span>Simpson Tech</span>
-        </div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count">0</span>
-        </div>
-    </nav>
-
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Welcome to Simpson Tech Store</h1>
-            <p>Quality products at affordable prices</p>
-            <button class="cta-button">Shop Now</button>
-        </div>
-    </section>
-
-    <section class="products-section" id="products">
-        <h2>Our Products</h2>
-        <div class="category-buttons">
-            <button class="category-btn active" data-category="all">All</button>
-            <button class="category-btn" data-category="shoes">Shoes</button>
-            <button class="category-btn" data-category="clothes">Clothes</button>
-            <button class="category-btn" data-category="tech">Tech</button>
-        </div>
-        <div class="products-grid" id="products-grid">
-            <!-- Products will be loaded here -->
-        </div>
-    </section>
-
-    <div class="checkout-modal" id="checkout-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Complete Your Purchase</h2>
-            <div class="payment-options">
-                <div class="payment-method" data-method="mobile">
-                    <i class="fas fa-mobile-alt"></i>
-                    <span>Mobile Money</span>
-                </div>
-                <div class="payment-method" data-method="bank">
-                    <i class="fas fa-university"></i>
-                    <span>Bank Transfer</span>
-                </div>
-                <div class="payment-method" data-method="atm">
-                    <i class="fas fa-credit-card"></i>
-                    <span>ATM Card</span>
-                </div>
-                <div class="payment-method" data-method="paypal">
-                    <i class="fab fa-paypal"></i>
-                    <span>PayPal</span>
-                </div>
-                <div class="payment-method" data-method="paytm">
-                    <i class="fas fa-rupee-sign"></i>
-                    <span>PayTM</span>
-                </div>
-                <div class="payment-method" data-method="bitcoin">
-                    <i class="fab fa-bitcoin"></i>
-                    <span>Bitcoin</span>
-                </div>
-            </div>
-            <div class="payment-details" id="payment-details">
-                <!-- Payment instructions will appear here -->
-            </div>
-        </div>
+    <!-- Flash Sale Banner -->
+    <div class="sale-banner">
+        ⚡ FLASH SALE! $1000 OFF EVERY ITEM - LIMITED TIME ⚡
     </div>
 
-    <section class="contact-section" id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <span>technologysimpson@gmail.com</span>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <span>+256748217351</span>
-            </div>
-            <div class="contact-item">
-                <i class="fab fa-whatsapp"></i>
-                <span>+256749939908</span>
+    <!-- Product Grid -->
+    <div class="products-container">
+        <div class="product-card" data-id="1">
+            <div class="badge">95% OFF</div>
+            <img src="images/iphone15.jpg" alt="iPhone 15 Pro">
+            <div class="product-info">
+                <h3>iPhone 15 Pro</h3>
+                <div class="price">
+                    <span class="old-price">$1023</span>
+                    <span class="new-price">$23</span>
+                </div>
+                <button class="buy-now">BUY NOW</button>
             </div>
         </div>
-    </section>
-<!-- Admin Login (hidden by default) -->
-<div class="admin-login-modal" id="admin-login">
-  <div class="login-box">
-    <h3>Admin Login</h3>
-    <input type="password" id="admin-password" placeholder="Enter admin password">
-    <button id="login-btn">Login</button>
-    <p id="login-error" class="error-message"></p>
-  </div>
-</div>
 
-<!-- Admin Panel (hidden until login) -->
-<div class="admin-panel" id="admin-panel">
-  <h3><i class="fas fa-lock"></i> Product Management</h3>
-  <form id="add-product-form">
-    <input type="text" id="product-name" placeholder="Product Name" required>
-    <input type="number" id="product-price" placeholder="Price" step="0.01" required>
-    <input type="text" id="product-image" placeholder="Image URL" required>
-    <select id="product-category" required>
-      <option value="">Select Category</option>
-      <option value="shoes">Shoes</option>
-      <option value="clothes">Clothes</option>
-      <option value="tech">Tech</option>
-    </select>
-    <textarea id="product-desc" placeholder="Description" required></textarea>
-    <button type="submit"><i class="fas fa-plus"></i> Add Product</button>
-  </form>
-  <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
-</div>
+        <div class="product-card" data-id="2">
+            <div class="badge">97% OFF</div>
+            <img src="images/macbook.jpg" alt="MacBook Pro">
+            <div class="product-info">
+                <h3>MacBook Pro M2</h3>
+                <div class="price">
+                    <span class="old-price">$1999</span>
+                    <span class="new-price">$29</span>
+                </div>
+                <button class="buy-now">BUY NOW</button>
+            </div>
+        </div>
 
-<!-- Admin Access Button (always visible) -->
-<div class="admin-access-btn" id="admin-access">
-  <i class="fas fa-user-shield"></i>
-      </div>
-    <script src="script.js"></script>
-    <script src="payment.js"></script>
+        <!-- Add more products following same structure -->
+    </div>
+
+    <script src="js/store.js"></script>
 </body>
-</html>
+                                  </html>
