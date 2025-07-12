@@ -98,7 +98,39 @@
             </div>
         </div>
     </section>
+<!-- Admin Login (hidden by default) -->
+<div class="admin-login-modal" id="admin-login">
+  <div class="login-box">
+    <h3>Admin Login</h3>
+    <input type="password" id="admin-password" placeholder="Enter admin password">
+    <button id="login-btn">Login</button>
+    <p id="login-error" class="error-message"></p>
+  </div>
+</div>
 
+<!-- Admin Panel (hidden until login) -->
+<div class="admin-panel" id="admin-panel">
+  <h3><i class="fas fa-lock"></i> Product Management</h3>
+  <form id="add-product-form">
+    <input type="text" id="product-name" placeholder="Product Name" required>
+    <input type="number" id="product-price" placeholder="Price" step="0.01" required>
+    <input type="text" id="product-image" placeholder="Image URL" required>
+    <select id="product-category" required>
+      <option value="">Select Category</option>
+      <option value="shoes">Shoes</option>
+      <option value="clothes">Clothes</option>
+      <option value="tech">Tech</option>
+    </select>
+    <textarea id="product-desc" placeholder="Description" required></textarea>
+    <button type="submit"><i class="fas fa-plus"></i> Add Product</button>
+  </form>
+  <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+</div>
+
+<!-- Admin Access Button (always visible) -->
+<div class="admin-access-btn" id="admin-access">
+  <i class="fas fa-user-shield"></i>
+      </div>
     <script src="script.js"></script>
     <script src="payment.js"></script>
 </body>
