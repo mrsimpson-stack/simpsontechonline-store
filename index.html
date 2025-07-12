@@ -3,47 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simpson Tech - Massive Discounts!</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Simpson Tech - Mega Discount Store</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Flash Sale Banner -->
     <div class="sale-banner">
-        ⚡ FLASH SALE! $1000 OFF EVERY ITEM - LIMITED TIME ⚡
+        ⚡ FLASH SALE! 90% OFF EVERYTHING - LIMITED TIME OFFER ⚡
     </div>
 
-    <!-- Product Grid -->
-    <div class="products-container">
-        <div class="product-card" data-id="1">
-            <div class="badge">95% OFF</div>
-            <img src="images/iphone15.jpg" alt="iPhone 15 Pro">
-            <div class="product-info">
-                <h3>iPhone 15 Pro</h3>
-                <div class="price">
-                    <span class="old-price">$1023</span>
-                    <span class="new-price">$23</span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <span>SIMPSON TECH</span>
+            <span class="discount-badge">90% OFF</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#deals">Hot Deals</a>
+            <a href="#categories">Categories</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>MEGA DISCOUNT STORE</h1>
+            <p>Everything must go! Prices slashed by 90%</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span id="hours">24</span>
+                    <span>HOURS</span>
                 </div>
-                <button class="buy-now">BUY NOW</button>
+                <div class="countdown-item">
+                    <span id="minutes">60</span>
+                    <span>MINUTES</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">60</span>
+                    <span>SECONDS</span>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="product-card" data-id="2">
-            <div class="badge">97% OFF</div>
-            <img src="images/macbook.jpg" alt="MacBook Pro">
-            <div class="product-info">
-                <h3>MacBook Pro M2</h3>
-                <div class="price">
-                    <span class="old-price">$1999</span>
-                    <span class="new-price">$29</span>
+    <!-- Products Grid -->
+    <section class="products-section" id="deals">
+        <h2>HOTTEST DEALS <span class="fire-emoji">🔥</span></h2>
+        <div class="products-grid" id="products-grid">
+            <!-- Products will be loaded here -->
+        </div>
+    </section>
+
+    <!-- Payment Modal -->
+    <div class="payment-modal" id="payment-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Complete Your Purchase</h2>
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div id="order-items"></div>
+                <div class="order-total">
+                    <span>Total:</span>
+                    <span id="order-total">$0.00</span>
                 </div>
-                <button class="buy-now">BUY NOW</button>
+            </div>
+            <div class="payment-options">
+                <h3>Select Payment Method</h3>
+                <div class="payment-methods">
+                    <div class="payment-method" data-method="mobile">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Mobile Money</span>
+                    </div>
+                    <div class="payment-method" data-method="bank">
+                        <i class="fas fa-university"></i>
+                        <span>Bank Transfer</span>
+                    </div>
+                    <div class="payment-method" data-method="card">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Debit/Credit Card</span>
+                    </div>
+                </div>
+                <div class="payment-instructions" id="payment-instructions">
+                    <!-- Payment instructions will appear here -->
+                </div>
+                <button id="confirm-payment" class="cta-button">Complete Payment</button>
             </div>
         </div>
-
-        <!-- Add more products following same structure -->
     </div>
 
-    <script src="js/store.js"></script>
+    <script src="script.js"></script>
 </body>
-                                  </html>
+                        </html>
