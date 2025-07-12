@@ -144,3 +144,78 @@ document.querySelectorAll('.category-btn').forEach(button => {
 document.addEventListener('DOMContentLoaded', () => {
     displayProducts();
 });
+
+// Admin System Configuration
+const ADMIN_PASSWORD = "SimpsonTech@2023"; // Change this to your secure password
+let isAdminLoggedIn = false;
+
+// DOM Elements
+const adminLoginModal = document.getElementById('admin-login');
+const adminPanel = document.getElementById('admin-panel');
+const adminAccessBtn = document.getElementById('admin-access');
+const loginBtn = document.getElementById('login-btn');
+const logoutBtn = document.getElementById('logout-btn');
+const loginError = document.getElementById('login-error');
+
+// Toggle Admin Access
+adminAccessBtn.addEventListener('click', () => {
+  if (!isAdminLoggedIn) {
+    adminLoginModal.style.display = 'flex';
+  } else {
+    adminPanel.style.display = 'block';
+  }
+});
+
+// Login Functionality
+loginBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  const password = document.getElementById('admin-password').value;
+  
+  if (password === ADMIN_PASSWORD) {
+    isAdminLoggedIn = true;
+    adminLoginModal.style.display = 'none';
+    adminPanel.style.display = 'block';
+    document.getElementById('admin-password').value = '';
+    loginError.textContent = '';
+  } else {
+    loginError.textContent = 'Incorrect password!';
+  }
+});
+
+// Logout Functionality
+logoutBtn.addEventListener('click', () => {
+  isAdminLoggedIn = false;
+  adminPanel.style.display = 'none';
+});
+
+// Add New Product
+document.getElementById('add-product-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  const newProduct = {
+    id: products.length + 1,
+    name: document.getElementById('product-name').value,
+    price: parseFloat(document.getElementById('product-price').value),
+    image: document.getElementById('product-image').value,
+    category: document.getElementById('product-category').value,
+    description: document.getElementById('product-desc').value
+  };
+  
+  // Add validation here
+  if (!newProduct.image.startsWith('http')) {
+    alert('Please enter a valid image URL');
+    return;
+  }
+  
+  products.push(newProduct);
+  displayProducts();
+  e.target.reset();
+  alert('Product added successfully!');
+});
+
+// Close modal when clicking outside
+window.addEventListener('click', (e) => {
+  if (e.target === adminLoginModal) {
+    adminLoginModal.style.display = 'none';
+  }
+});
